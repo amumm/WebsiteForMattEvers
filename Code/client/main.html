@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+
+<head>
+  <title>Matthew Evers Design</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+
+<body>
+
+  <div class="container" ng-app="matt-app">
+    <div class="logo-wrapper">
+      <div class="">
+        <img src="Images/Logo_SeniorPic/logo.png" style=" z-index: 2; display: block; margin: 0 auto;">
+      </div>
+    </div>
+    <div class="nav-wrapper" style="margin-top: 100px;">
+      <div class="" data-spy="affix" data-offset-top="338" style=" z-index: 1;">
+        <navbar></navbar>
+      </div>
+    </div>
+    <div class="home" style=" z-index: -1; " >
+      <div id="diamond_grid" class="">
+          <div class="diamondout">
+            <diamond width="310" height="310" project-name="test1" imageurl="Images/thumbnails/noSub_thumb.png" modalurl="imports/modals/No_Sub.html" class="" id="1"></diamond>
+          </div>
+          <div class="diamondout">
+            <diamond width="310" height="310" project-name="test2" imageurl="Images/thumbnails/sunrise_thumb.png" modalurl="imports/modals/Sunrise.html" class="" id="2"></diamond>
+          </div>
+          <div class="diamondout">
+            <diamond width="310" height="310" project-name="test3" imageurl="Images/thumbnails/gd_thumb.png" modalurl="imports/modals/Welcome.html" class="" id="3"></diamond>
+          </div>
+          <div class="diamondout">
+            <diamond width="310" height="310" project-name="test4" imageurl="Images/thumbnails/aiga_thumb.png" modalurl="imports/modals/AIGA.html" class="" id="4"></diamond>
+          </div>
+          <div class="diamondout">
+            <diamond width="310" height="310" project-name="test5" imageurl="Images/thumbnails/type_thumb.png" modalurl="imports/modals/Typeface.html" class="" id="5"></diamond>
+          </div>
+          <div class="diamondout">
+            <diamond width="310" height="310" project-name="test6" imageurl="Images/thumbnails/tarot_thumb.png" modalurl="imports/modals/Tarot.html" class="" id="6"></diamond>
+          </div>
+      </div>
+      <div id="diamond_grid_2" style="transform:translateX(162px) translateY(160px)">
+          <div class="diamondout">
+            <diamond width="310" height="310" project-name="test10" imageurl="Images/thumbnails/film_thumb.png" modalurl="imports/modals/DuskTilDawn.html" class="" id="11"></diamond>
+          </div>
+          <div class="diamondout">
+            <diamond width="310" height="310" project-name="test11" imageurl="Images/thumbnails/workshop_thumb.png" modalurl="imports/modals/DesignWorkshops.html" class="" id="12"></diamond>
+          </div>
+          <div class="diamondout">
+
+            <diamond width="310" height="310" project-name="test10" imageurl="Images/thumbnails/cyclone_thumb.png" modalurl="imports/modals/Cyclone.html" class="" id="13"></diamond>
+          </div>
+          <div class="diamondout">
+            <diamond width="310" height="310" project-name="test11" imageurl="Images/thumbnails/afraid_thumb.png" modalurl="imports/modals/Own.html" class="" id="14"></diamond>
+          </div>
+      </div>
+    </div>
+
+    <div class="bio" style=" z-index: 100; display: none; text-align: center;" >
+      <br/>
+      <img style="display: block; margin: 0 auto;" src="Images/Logo_SeniorPic/seniorPic.jpg" width="450" height="712">
+      <br/>
+      <br/>
+      <p style="margin-left: 20%; margin-right: 20%; margin-bottom: 2%;">My name is Matthew and I am a Senior at Iowa State University
+        majoring in graphic design. My major interests in the field of graphic design are interactive design and
+        motion graphics. Anything really that is not just straight up print based. I really want to help design
+        evolve with the new technologies that are one the market. The things that interest me most are projection
+        mapping because it allows the creator and the viewer to interact with a space by projecting video or images
+        onto a surface that may not be totally flat and manipulating the video or image change the object it is being
+        projected onto. The other thing I am most interested in is computer generated graphics and motion graphics
+        involving text.
+      </p>
+
+    </div>
+    <div class="contact" style=" z-index: -1; display: none; text-align: center" >
+      <br><br>
+      <p style="margin-left: 20%; margin-right: 20%;">
+        <span><h4>Name: Mathew Evers</h4></span><br>
+        <span><h4>Email: mlevers@iastate.edu</h4></span><br>
+        <span><h4>Phone: (712)579-8677</h4></span>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function () {
+       //hides them logo when the page loads
+       $("#myImage").hide();
+    });
+
+    $(document).scroll(function () {
+    var y = $(document).scrollTop(),
+       image = $("#myImage"),
+       image2 = $("#myImage2"),
+       links = $(".makeCenter"),
+       links2 = $(".makeLeft"),
+       header = $("#menu");
+
+
+      if (y >= 338) {
+          //show the image and make the header fixed
+          header.addClass('fixed');
+          image.show();
+          image2.hide();
+          links.hide();
+          links2.show();
+      } else {
+          //put the header in original position and hide image
+          header.removeClass('fixed');
+          image.hide();
+          image2.show();
+          links2.hide();
+          links.show();
+
+      }
+    });
+
+    function goToHome(){
+      home = $(".home")
+      bio = $(".bio")
+      contact = $(".contact")
+      home.show();
+      bio.hide();
+      contact.hide();
+
+    }
+    function goToBio(){
+      home = $(".home")
+      bio = $(".bio")
+      contact = $(".contact")
+      home.hide();
+      bio.show();
+      contact.hide();
+    }
+    function goToContact(){
+      home = $(".home")
+      bio = $(".bio")
+      contact = $(".contact")
+      home.hide();
+      bio.hide();
+      contact.show();
+    }
+
+</script>
+
+
+  <style media="screen">
+    .container{
+      width: 100%;
+    }
+    .affix {
+      top: 0;
+      width: 97.77%;
+    }
+
+    .affix-top {
+      width: 100%;
+    }
+
+    .affix-bottom {
+      width: 100%;
+      /*position: absolute;*/
+    }
+    .nav-wrapper{
+        height: 100px;
+    }
+    .logo-wrapper{
+        height: 210px;
+        margin-top: 25px;
+    }
+    .navbar .navbar-nav {
+      display: inline-block;
+      float: none;
+      vertical-align: top;
+    }
+
+    .navbar .navbar-collapse {
+      height: 50px;
+    }
+    .makeRight{
+      display:inline-block;
+      width: 500px;
+      margin: 0% 0% 0% 32%;
+    }
+    .navLogo{
+      display:inline-block;
+      width: 60px;
+      margin: 0% 0% 0% 19%;
+
+    }
+
+  </style>
+</body>
